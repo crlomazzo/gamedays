@@ -224,43 +224,78 @@
             .shape-left, .shape-right {
                 width: 200px;
             }
+            .main-content {
+                margin-left: 0;
+                padding: 1rem;
+            }
+            .side-nav {
+                position: fixed;
+                left: 0;
+                bottom: 0;
+                top: auto;
+                width: 100%;
+                height: auto;
+                padding: 1rem;
+                flex-direction: row;
+                justify-content: center;
+                background: rgba(0, 0, 0, 0.9);
+                backdrop-filter: blur(10px);
+                z-index: 100;
+            }
+            .side-nav a {
+                padding: 8px 16px;
+                font-size: 0.9rem;
+                margin: 0 5px;
+                white-space: nowrap;
+            }
+            .principles-section {
+                padding: 2rem 1rem;
+                margin: 2rem 0;
+            }
+            .principles-section p {
+                font-size: 1.5rem !important;
+                margin-bottom: 2rem !important;
+            }
+            .principles-section > div > div {
+                padding: 1.5rem !important;
+            }
+            .principles-section > div > div > div:first-child {
+                font-size: 2.5rem !important;
+            }
+            .principles-section > div > div > div:last-child {
+                font-size: 1.2rem !important;
+            }
+            .video-section, .resources-section {
+                padding: 1.5rem;
+                margin-bottom: 80px;
+            }
+            body {
+                padding-bottom: 70px;
+            }
+            .game-days-container {
+                padding: 20px 15px;
+            }
         }
 
-        .side-nav {
-            position: fixed;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 250px;
-            background: rgba(0, 0, 0, 0.2);
-            padding: 2rem;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .side-nav a {
-            display: inline-block;
-            padding: 12px 24px;
-            background: linear-gradient(45deg, var(--bright-blue), #00bcd4);
-            color: white;
-            text-decoration: none;
-            border-radius: 25px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 10px;
-        }
-
-        .side-nav a:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(33, 150, 243, 0.3);
-        }
-
-        .main-content {
-            margin-left: 250px;
-            padding: 2rem;
+        @media (max-width: 480px) {
+            .game-days-header h1 {
+                font-size: 2rem;
+            }
+            .side-nav {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+            .side-nav::-webkit-scrollbar {
+                display: none;
+            }
+            .principles-section > div {
+                grid-template-columns: 1fr !important;
+            }
+            .back-button {
+                display: block;
+                width: 100%;
+                margin: 10px 0 !important;
+            }
         }
     </style>
 </head>
