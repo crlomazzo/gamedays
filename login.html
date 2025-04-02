@@ -336,28 +336,26 @@
     </div>
 
     <script>
-        function handleLogin() {
+        function handleLogin(event) {
+            event.preventDefault(); // Prevent form submission
             const password = document.getElementById('password').value;
             if (password === 'Gamedays') {
                 document.getElementById('welcomePopup').style.display = 'flex';
+                return false;
             } else {
-                document.getElementById('error-message').style.display = 'block';
+                document.getElementById('errorMessage').style.display = 'block';
+                return false;
             }
         }
 
         function openEmail() {
             // Set authentication cookie before redirecting
             document.cookie = "authenticated=true; path=/; secure; samesite=strict";
-            window.location.href = 'index.html';
+            window.location.href = 'game-days.html';
         }
 
-        // Handle Enter key press
-        document.getElementById('password').addEventListener('keypress', function(event) {
-            if (event.key === 'Enter') {
-                event.preventDefault();
-                handleLogin();
-            }
-        });
+        // Remove the duplicate event listener since we're using onsubmit
+        document.getElementById('loginForm').onsubmit = handleLogin;
     </script>
 </body>
 </html> 
