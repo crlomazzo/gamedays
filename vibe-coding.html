@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shopify Game Days</title>
+    <title>Vibe Coding Examples</title>
     <link rel="stylesheet" href="styles.css">
     <script src="auth.js"></script>
     <style>
@@ -45,7 +45,6 @@
             pointer-events: none;
         }
 
-        /* Geometric shapes */
         .geometric-shapes {
             position: fixed;
             top: 0;
@@ -81,7 +80,7 @@
             background: linear-gradient(225deg, var(--bright-blue) 0%, transparent 100%);
         }
 
-        .game-days-container {
+        .vibe-coding-container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 40px 20px;
@@ -89,13 +88,12 @@
             z-index: 1;
         }
 
-        .game-days-header {
+        .vibe-coding-header {
             text-align: center;
             margin-bottom: 40px;
-            position: relative;
         }
 
-        .game-days-header h1 {
+        .vibe-coding-header h1 {
             font-size: 4rem;
             font-weight: 800;
             text-transform: uppercase;
@@ -106,40 +104,14 @@
             text-shadow: 0 0 20px rgba(33, 150, 243, 0.5);
         }
 
-        .game-days-header p {
-            color: var(--text-color);
-            font-size: 1.2rem;
-            opacity: 0.9;
-            margin-top: 1rem;
-        }
-
-        .video-section {
-            background: var(--card-bg);
-            padding: 30px;
-            border-radius: 12px;
+        .examples-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
             margin-bottom: 40px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
         }
 
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            overflow: hidden;
-            border-radius: 8px;
-        }
-
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-
-        .resources-section {
+        .example-card {
             background: var(--card-bg);
             padding: 30px;
             border-radius: 12px;
@@ -148,39 +120,19 @@
             box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
         }
 
-        .resources-section h2 {
+        .example-card h2 {
             color: white;
-            font-size: 2rem;
-            margin-bottom: 30px;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
-        .resources-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .resource-card {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 20px;
+        .example-card img {
+            width: 100%;
+            height: auto;
             border-radius: 8px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s ease;
-        }
-
-        .resource-card:hover {
-            transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.1);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
-
-        .resource-card a {
-            color: var(--text-color);
-            text-decoration: none;
-            font-size: 1.1rem;
-            display: block;
+            margin-bottom: 20px;
         }
 
         .back-button {
@@ -205,10 +157,10 @@
         }
 
         @media (max-width: 768px) {
-            .game-days-header h1 {
+            .vibe-coding-header h1 {
                 font-size: 2.5rem;
             }
-            .resources-grid {
+            .examples-grid {
                 grid-template-columns: 1fr;
             }
             .shape-left, .shape-right {
@@ -223,48 +175,32 @@
         <div class="shape shape-right"></div>
     </div>
 
-    <div class="game-days-container">
-        <div class="game-days-header">
-            <h1>Game Days</h1>
-            <p>Welcome to your next step in leadership development</p>
+    <div class="vibe-coding-container">
+        <div class="vibe-coding-header">
+            <h1>Vibe Coding Examples</h1>
         </div>
 
-        <div class="video-section">
-            <div class="video-container">
-                <iframe 
-                    src="https://drive.google.com/file/d/1d2DG78kN_bhDiiJvzv7xwVx7JRYxHvbk/preview" 
-                    allow="autoplay">
-                </iframe>
+        <div class="examples-grid">
+            <div class="example-card">
+                <h2>Amy's Example</h2>
+                <img src="https://drive.google.com/uc?export=view&id=1xbfK90kNZEPMOrBaEMbYmc9Wmo420H6B" alt="Amy's Vibe Coding Example">
             </div>
-        </div>
-
-        <div class="resources-section">
-            <h2>Resources for Managers</h2>
-            <div class="resources-grid">
-                <div class="resource-card">
-                    <a href="https://docs.google.com/document/d/1u5lIrD-ZAmJGUVO0tKao0r_nv0UQZQt-VCssgH3Ueos/edit?tab=t.0" target="_blank">Blueprint Generator</a>
-                </div>
-                <div class="resource-card">
-                    <a href="https://vault.shopify.io/page/Book-Bar~758.md" target="_blank">Book Bar Resources</a>
-                </div>
-                <div class="resource-card">
-                    <a href="https://vault.shopify.io/page/Manager-Labs~Q1NN.md" target="_blank">Manager Labs</a>
-                </div>
-                <div class="resource-card">
-                    <a href="https://newsletter.weskao.com/p/15-principles-for-managing-up" target="_blank">15 principles for managing up</a>
-                </div>
-                <div class="resource-card">
-                    <a href="https://paulgraham.com/foundermode.html" target="_blank">Founder mode (why management is different here)</a>
-                </div>
-                <div class="resource-card">
-                    <a href="https://davidmarquet.wordpress.com/2015/02/18/grow-your-people-ladder-of-leadership-series-part-3/" target="_blank">Ladder of leadership - David Marquet</a>
-                </div>
+            <div class="example-card">
+                <h2>Christina's Example</h2>
+                <img src="https://drive.google.com/uc?export=view&id=1ksvm9sIlnvzaoH9d3ImnWulnnO2ijECj" alt="Christina's Vibe Coding Example">
+            </div>
+            <div class="example-card">
+                <h2>Jan's Example</h2>
+                <img src="https://drive.google.com/uc?export=view&id=1MegCmqwKdacevTErQddvgU4VKr0jOb14" alt="Jan's Vibe Coding Example">
+            </div>
+            <div class="example-card">
+                <h2>Daniella's Example</h2>
+                <img src="https://drive.google.com/uc?export=view&id=1KMZDMU7mKMM-BS7aoCiG25_u8vNTCuwx" alt="Daniella's Vibe Coding Example">
             </div>
         </div>
 
         <div style="text-align: center;">
-            <a href="index.html" class="back-button">Back to Email</a>
-            <a href="vibe-coding.html" class="back-button" style="margin-left: 20px;">See Vibe Coding Examples</a>
+            <a href="game-days.html" class="back-button">Back to Game Days</a>
         </div>
     </div>
 </body>
