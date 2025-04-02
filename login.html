@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Game Days</title>
+    <style>
+        :root {
+            --electric-blue: #00F5FF;
+            --bright-purple: #B026FF;
+            --neon-pink: #FF2E63;
+            --dark-bg: #0A0A0A;
+            --card-bg: #1A1A1A;
+            --text-color: #FFFFFF;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text-color);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .login-container {
+            background-color: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0, 245, 255, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        h1 {
+            color: var(--electric-blue);
+            margin-bottom: 2rem;
+            text-shadow: 0 0 10px rgba(0, 245, 255, 0.3);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+        }
+
+        input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid rgba(0, 245, 255, 0.2);
+            border-radius: 4px;
+            background-color: rgba(255, 255, 255, 0.05);
+            color: var(--text-color);
+            font-size: 1rem;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: var(--electric-blue);
+            box-shadow: 0 0 10px rgba(0, 245, 255, 0.2);
+        }
+
+        button {
+            background: linear-gradient(45deg, var(--electric-blue), var(--bright-purple));
+            color: var(--text-color);
+            border: none;
+            padding: 0.75rem 2rem;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 100%;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 245, 255, 0.3);
+        }
+
+        .error-message {
+            color: var(--neon-pink);
+            margin-top: 1rem;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Game Days</h1>
+        <form id="loginForm" onsubmit="return handleLogin(event)">
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" required>
+            </div>
+            <button type="submit">Enter</button>
+            <div id="errorMessage" class="error-message">Incorrect password</div>
+        </form>
+    </div>
+
+    <script>
+        function handleLogin(event) {
+            event.preventDefault();
+            const password = document.getElementById('password').value;
+            const errorMessage = document.getElementById('errorMessage');
+            
+            // Hash the password before comparing
+            const hashedPassword = btoa(password); // Simple encoding for demonstration
+            
+            if (hashedPassword === 'R2FtZWRheXM=') { // Base64 encoded "Gamedays"
+                // Set a secure session cookie
+                document.cookie = "authenticated=true; path=/; secure; samesite=strict";
+                window.location.href = 'index.html';
+                return false;
+            } else {
+                errorMessage.style.display = 'block';
+                return false;
+            }
+        }
+    </script>
+</body>
+</html> 
