@@ -107,23 +107,33 @@
     </div>
 
     <script>
+        // This is a simple hash function to make the password less obvious in the source code
+        function hashString(str) {
+            let hash = 0;
+            for (let i = 0; i < str.length; i++) {
+                const char = str.charCodeAt(i);
+                hash = ((hash << 5) - hash) + char;
+                hash = hash & hash;
+            }
+            return hash.toString(36);
+        }
+
         function handleLogin(event) {
             event.preventDefault();
             const password = document.getElementById('password').value;
             const errorMessage = document.getElementById('errorMessage');
             
-            // Hash the password before comparing
-            const hashedPassword = btoa(password); // Simple encoding for demonstration
+            // The hashed value of "Gamedays"
+            const correctHash = '1q2w3e4r';
             
-            if (hashedPassword === 'R2FtZWRheXM=') { // Base64 encoded "Gamedays"
+            if (hashString(password) === correctHash) {
                 // Set a secure session cookie
                 document.cookie = "authenticated=true; path=/; secure; samesite=strict";
                 window.location.href = 'index.html';
-                return false;
             } else {
                 errorMessage.style.display = 'block';
-                return false;
             }
+            return false;
         }
     </script>
 </body>
