@@ -340,7 +340,9 @@
             event.preventDefault(); // Prevent form submission
             const password = document.getElementById('password').value;
             if (password === 'Gamedays') {
-                document.getElementById('welcomePopup').style.display = 'flex';
+                const popup = document.getElementById('welcomePopup');
+                popup.style.display = 'block';
+                document.body.style.overflow = 'hidden'; // Prevent background scrolling
                 return false;
             } else {
                 document.getElementById('errorMessage').style.display = 'block';
@@ -354,8 +356,11 @@
             window.location.href = 'game-days.html';
         }
 
-        // Remove the duplicate event listener since we're using onsubmit
-        document.getElementById('loginForm').onsubmit = handleLogin;
+        // Initialize form handling
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('loginForm');
+            form.onsubmit = handleLogin;
+        });
     </script>
 </body>
 </html> 
