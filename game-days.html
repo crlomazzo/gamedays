@@ -214,6 +214,45 @@
             box-shadow: 0 5px 15px rgba(33, 150, 243, 0.3);
         }
 
+        .side-nav {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 250px;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            height: 100vh;
+            z-index: 100;
+        }
+
+        .side-nav a {
+            display: inline-block;
+            padding: 12px 24px;
+            background: linear-gradient(45deg, var(--bright-blue), #00bcd4);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .side-nav a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(33, 150, 243, 0.3);
+        }
+
+        .main-content {
+            margin-left: 250px;
+            padding: 2rem;
+        }
+
         @media (max-width: 768px) {
             .game-days-header h1 {
                 font-size: 2.5rem;
@@ -240,7 +279,6 @@
                 justify-content: center;
                 background: rgba(0, 0, 0, 0.9);
                 backdrop-filter: blur(10px);
-                z-index: 100;
             }
             .side-nav a {
                 padding: 8px 16px;
