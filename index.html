@@ -11,17 +11,19 @@
             background: rgba(26, 26, 26, 0.95);
             backdrop-filter: blur(10px);
             padding: 1.5rem;
-            margin-bottom: 2rem;
+            margin: 2rem auto;
             border-radius: 12px;
             border: 1px solid rgba(255, 255, 255, 0.1);
             box-shadow: 0 0 20px rgba(0, 245, 255, 0.1);
+            max-width: 800px;
+            color: #FFFFFF;
         }
 
         .context-box p {
             margin: 0.5rem 0;
-            color: var(--text-color);
             line-height: 1.5;
-            font-size: 0.95em;
+            font-size: 1rem;
+            opacity: 0.9;
         }
 
         .context-box strong {
@@ -35,26 +37,67 @@
         }
 
         .email-container {
-            margin-top: 2rem;
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: #FFFFFF;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .email-meta {
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #E5E5E5;
+        }
+
+        .email-meta p {
+            margin: 0.5rem 0;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .email-meta p strong {
+            color: #333;
+            font-weight: 600;
+            display: inline-block;
+            width: 80px;
+        }
+
+        .email-content {
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .email-content p {
+            margin: 1rem 0;
+        }
+
+        body {
+            background: #F5F5F5;
+            padding: 2rem;
+            min-height: 100vh;
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
     </style>
 </head>
 <body>
+    <div class="context-box">
+        <p>This was a vibe coded website created at <strong>Game Days April 2025</strong> as part of the activity of "Putting Shopify First".</p>
+        <p>This was created by non-developers to show our commitment to embracing Tobi's email on March 20 that embracing AI is now a baseline expectation.</p>
+        <p class="goals">We hope that this website:<br>
+        1) Serves as inspiration that you can also vibe code<br>
+        2) Highlights key leadership resources available to you post Game Days.</p>
+    </div>
+
     <div class="email-container">
-        <div class="context-box">
-            <p>This was a vibe coded website created at <strong>Game Days April 2025</strong> as part of the activity of "Putting Shopify First".</p>
-            <p>This was created by non-developers to show our commitment to embracing Tobi's email on March 20 that embracing AI is now a baseline expectation.</p>
-            <p class="goals">We hope that this website:<br>
-            1) Serves as inspiration that you can also vibe code<br>
-            2) Highlights key leadership resources available to you post Game Days.</p>
+        <div class="email-meta">
+            <p><strong>From:</strong> Tobi</p>
+            <p><strong>To:</strong> Managers</p>
+            <p><strong>Subject:</strong> On leadership</p>
         </div>
 
-        <div class="email-meta">
-            <p>From: Tobi</p>
-            <p>To: Managers</p>
-            <p>Subject: On leadership</p>
-        </div>
-        
         <div class="email-content">
             <p>Team,</p>
 
@@ -64,7 +107,7 @@
 
             <p>I can't tell you how to do that in your various departments. But a good start would be to remind everyone that we are a business. More importantly, we are a hugely ambitious one. We are trying to create a world class product that gives superpowers to the merchants that we are obsessed over.</p>
 
-            <p>Everything Shopify does is to accomplish this, and everyone at Shopify should be able to describe how their job, through a series of direct or indirect steps, furthers this mission. To help you make this more clear to your team members, here are some pointers about what Shopify is not: Shopify, like any other for-profit company, is not a family. The very idea is preposterous. You are born into a family. You never choose it, and they can't un-family you. It should be massively obvious that Shopify is not a family but I see people, even leaders, casually use terms like "Shopifam" which will cause the members of our teams (especially junior ones that have never worked anywhere else) to get the wrong impression. The dangers of "family thinking" are that it becomes incredibly hard to let poor performers go. Shopify is a team, not a family.</p>
+            <p>Everything Shopify does is to accomplish this, and everyone at Shopify should be able to describe how their job, through a series of direct or indirect steps, furthers this mission. To help you make this more clear to your team members, here are some pointers about what Shopify is not: Shopify, like any other for-profit company, is not a family. The very idea is preposterous. You are born into a family. You never choose it, and they can't un-family you. It should be massively obvious that Shopify is not a family.</p>
 
             <p>We literally only want the best people in the world. The reason why you joined Shopify is because - I hope - all the other people you met during the interview process were really smart, caring, and committed. This is magic and it creates a virtuous magnetism on talented people because very few people in the world have this in themselves. People who don't should not be part of this team. This magic and magnetism is a product of tight performance management that I expect all of us to get back to. Shopify is also not the government. We cannot solve every societal problem here. We are part of an ecosystem, of economies, of culture, and of actual countries. We also can't take care of all your needs. We will try our best to take care of the ones that ensure you can support our mission. Shopify's worldview is well documented - we believe in liberal values and equality of opportunity. Sometimes we see opportunities to help nudge these causes forward. We do this because this directly helps our business and our merchants and not because of some moralistic overreach.</p>
 
