@@ -230,16 +230,22 @@
         }
 
         .side-nav a {
+            display: inline-block;
+            padding: 12px 24px;
+            background: linear-gradient(45deg, var(--bright-blue), #00bcd4);
             color: white;
             text-decoration: none;
-            padding: 1rem;
-            border-radius: 8px;
-            transition: background 0.3s ease;
-            font-size: 1.1rem;
+            border-radius: 25px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
         }
 
         .side-nav a:hover {
-            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(33, 150, 243, 0.3);
         }
 
         .main-content {
