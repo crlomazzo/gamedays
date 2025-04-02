@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Email from Tobi</title>
+    <title>Putting Shopify First</title>
     <style>
         body {
             background: linear-gradient(135deg, #1a237e 0%, #0d47a1 100%);
             color: white;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             margin: 0;
             padding: 0;
             display: flex;
@@ -18,21 +18,27 @@
         }
 
         .login-container {
-            background: rgba(26, 26, 26, 0.8);
-            padding: 2rem;
+            background: rgba(26, 26, 26, 0.95);
+            padding: 3rem;
             border-radius: 12px;
-            box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
             width: 100%;
             max-width: 400px;
             margin: 2rem;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
+            text-align: center;
         }
 
         h1 {
-            text-align: center;
-            margin-bottom: 2rem;
-            font-size: 2rem;
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin: 0 0 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
         }
 
         .form-group {
@@ -43,6 +49,7 @@
             display: block;
             margin-bottom: 0.5rem;
             font-size: 1rem;
+            text-align: left;
         }
 
         input {
@@ -53,6 +60,7 @@
             background: rgba(255, 255, 255, 0.1);
             color: white;
             font-size: 1rem;
+            box-sizing: border-box;
         }
 
         input:focus {
@@ -66,14 +74,18 @@
             background: #2196f3;
             color: white;
             border: none;
-            border-radius: 6px;
+            border-radius: 25px;
             font-size: 1rem;
             cursor: pointer;
-            transition: background 0.3s ease;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            font-weight: 500;
+            letter-spacing: 1px;
         }
 
         button:hover {
             background: #1976d2;
+            transform: translateY(-2px);
         }
 
         .error-message {
@@ -122,29 +134,37 @@
             background: #2196f3;
             color: white;
             text-decoration: none;
-            border-radius: 6px;
+            border-radius: 25px;
             font-weight: 500;
-            transition: background 0.3s ease;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .popup-button:hover {
             background: #1976d2;
+            transform: translateY(-2px);
         }
 
         @media (max-width: 480px) {
             .login-container {
                 margin: 1rem;
-                padding: 1.5rem;
+                padding: 2rem;
+            }
+
+            h1 {
+                font-size: 2rem;
             }
         }
     </style>
 </head>
 <body>
     <div class="login-container">
-        <h1>Welcome to Game Days</h1>
+        <h1>Putting Shopify First</h1>
+        <p class="subtitle">Building resilient systems together</p>
         <form id="loginForm">
             <div class="form-group">
-                <label for="password">Enter Password</label>
+                <label for="password">Password</label>
                 <input type="password" id="password" required>
             </div>
             <button type="submit">Enter</button>
