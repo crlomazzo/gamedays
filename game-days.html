@@ -86,10 +86,52 @@
             z-index: 1;
         }
 
-        .game-days-header h1 {
-            color: var(--electric-blue);
-            font-size: 3rem;
+        .game-days-logo {
+            width: 100%;
+            height: 120px;
+            background: linear-gradient(135deg, #1a237e 0%, #0d47a1 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
             margin-bottom: 20px;
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .game-days-logo::before,
+        .game-days-logo::after {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(45deg, #2196f3, #00bcd4);
+            transform: rotate(45deg);
+            z-index: 1;
+            opacity: 0.1;
+        }
+
+        .game-days-logo::before {
+            left: -100px;
+        }
+
+        .game-days-logo::after {
+            right: -100px;
+        }
+
+        .game-days-logo h1 {
+            color: #fff;
+            font-size: 3rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            z-index: 2;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(90deg, #00F5FF, #B026FF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             text-shadow: 0 0 10px rgba(0, 245, 255, 0.3);
         }
 
@@ -203,7 +245,7 @@
         }
 
         @media (max-width: 768px) {
-            .game-days-header h1 {
+            .game-days-logo h1 {
                 font-size: 2rem;
             }
 
@@ -222,7 +264,9 @@
 
     <div class="game-days-container">
         <div class="game-days-header">
-            <img src="game-days-logo.png" alt="Shopify Game Days" style="max-width: 600px; width: 100%; height: auto;">
+            <div class="game-days-logo">
+                <h1>Shopify Game Days</h1>
+            </div>
             <p>Welcome to your next step in leadership development</p>
         </div>
 
