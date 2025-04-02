@@ -26,6 +26,12 @@
             100% { transform: translateY(0px) rotate(0deg); }
         }
 
+        @keyframes flash {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); box-shadow: 0 0 20px rgba(33, 150, 243, 0.5); }
+            100% { transform: scale(1); }
+        }
+
         body {
             background: linear-gradient(-45deg, #0A0A0A, #1A1A1A, #2A2A2A);
             background-size: 400% 400%;
@@ -247,29 +253,23 @@
         }
 
         .popup-button {
-            display: block;
-            width: 100%;
-            padding: 1rem;
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
             background: var(--bright-blue);
             color: white;
             text-decoration: none;
-            border-radius: 8px;
+            border-radius: 25px;
             font-weight: 500;
             border: none;
             cursor: pointer;
-            margin-top: 2rem;
-            transition: all 0.3s ease;
-            font-size: 1.2rem;
-            text-align: center;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-top: 1rem;
+            transition: transform 0.3s ease;
+            animation: flash 2s infinite;
         }
 
         .popup-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-            background: #1e88e5;
+            animation: none;
         }
 
         @media (max-width: 768px) {
