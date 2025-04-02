@@ -6,15 +6,53 @@
     <title>Email from Tobi</title>
     <link rel="stylesheet" href="styles.css">
     <script src="auth.js"></script>
+    <style>
+        .context-box {
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 20px rgba(0, 245, 255, 0.1);
+        }
+
+        .context-box p {
+            margin: 0.5rem 0;
+            color: var(--text-color);
+            line-height: 1.5;
+            font-size: 0.95em;
+        }
+
+        .context-box strong {
+            color: var(--electric-blue);
+            font-weight: 600;
+        }
+
+        .context-box .goals {
+            margin-top: 1rem;
+            color: var(--neon-pink);
+        }
+
+        .email-container {
+            margin-top: 2rem;
+        }
+    </style>
 </head>
 <body>
     <div class="email-container">
-        <div class="email-header">
-            <div class="email-meta">
-                <p><strong>From:</strong> Tobi</p>
-                <p><strong>To:</strong> Managers</p>
-                <p><strong>Subject:</strong> On leadership</p>
-            </div>
+        <div class="context-box">
+            <p>This was a vibe coded website created at <strong>Game Days April 2025</strong> as part of the activity of "Putting Shopify First".</p>
+            <p>This was created by non-developers to show our commitment to embracing Tobi's email on March 20 that embracing AI is now a baseline expectation.</p>
+            <p class="goals">We hope that this website:<br>
+            1) Serves as inspiration that you can also vibe code<br>
+            2) Highlights key leadership resources available to you post Game Days.</p>
+        </div>
+
+        <div class="email-meta">
+            <p>From: Tobi</p>
+            <p>To: Managers</p>
+            <p>Subject: On leadership</p>
         </div>
         
         <div class="email-content">
