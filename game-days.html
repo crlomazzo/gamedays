@@ -3,124 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shopify Game Days</title>
+    <title>Game Days | Managing at Shopify</title>
     <link rel="stylesheet" href="styles.css">
     <script src="auth.js"></script>
     <style>
         :root {
-            --dark-blue: #1a237e;
+            --navy-blue: #1e2c4f;
             --bright-blue: #2196f3;
-            --grid-blue: rgba(255, 255, 255, 0.1);
-            --dark-bg: #0A0A0A;
-            --card-bg: rgba(26, 26, 26, 0.8);
             --text-color: #FFFFFF;
         }
 
         body {
-            background: linear-gradient(135deg, var(--dark-blue) 0%, #0d47a1 100%);
+            background: var(--navy-blue);
             color: var(--text-color);
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            min-height: 100vh;
-            position: relative;
-            overflow-x: hidden;
         }
 
-        /* Grid background */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                linear-gradient(var(--grid-blue) 1px, transparent 1px),
-                linear-gradient(90deg, var(--grid-blue) 1px, transparent 1px);
-            background-size: 40px 40px;
-            z-index: 0;
-            opacity: 0.3;
-            pointer-events: none;
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: rgba(0, 0, 0, 0.2);
         }
 
-        /* Geometric shapes */
-        .geometric-shapes {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 0;
-            overflow: hidden;
+        .nav-logo {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: white;
+            text-decoration: none;
         }
 
-        .shape {
-            position: absolute;
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            transition: background 0.3s ease;
+        }
+
+        .nav-link.active {
             background: var(--bright-blue);
-            opacity: 0.6;
         }
 
-        .shape-left {
-            left: -5%;
-            top: 50%;
-            width: 400px;
-            height: 800px;
-            transform: skew(-30deg) translateY(-50%);
-            background: linear-gradient(135deg, var(--bright-blue) 0%, transparent 100%);
+        .nav-link:hover {
+            background: rgba(255, 255, 255, 0.1);
         }
 
-        .shape-right {
-            right: -5%;
-            top: 50%;
-            width: 400px;
-            height: 800px;
-            transform: skew(30deg) translateY(-50%);
-            background: linear-gradient(225deg, var(--bright-blue) 0%, transparent 100%);
-        }
-
-        .game-days-container {
+        .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 40px 20px;
-            position: relative;
-            z-index: 1;
+            padding: 2rem;
         }
 
-        .game-days-header {
+        .header {
             text-align: center;
-            margin-bottom: 40px;
-            position: relative;
+            margin: 4rem 0;
         }
 
-        .game-days-header h1 {
+        .header h1 {
             font-size: 4rem;
             font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: white;
             margin: 0;
-            line-height: 1.2;
-            text-shadow: 0 0 20px rgba(33, 150, 243, 0.5);
+            letter-spacing: 2px;
         }
 
-        .game-days-header p {
-            color: var(--text-color);
-            font-size: 1.2rem;
+        .header p {
+            font-size: 1.5rem;
+            margin: 2rem 0;
             opacity: 0.9;
-            margin-top: 1rem;
+        }
+
+        .quote-section {
+            text-align: center;
+            margin: 3rem 0;
+            padding: 2rem;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 12px;
+        }
+
+        .quote {
+            font-size: 1.8rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .quote-author {
+            font-size: 1.2rem;
+            opacity: 0.8;
+        }
+
+        .tldr {
+            font-size: 1.4rem;
+            max-width: 800px;
+            margin: 2rem auto;
+            text-align: center;
         }
 
         .video-section {
-            background: var(--card-bg);
-            padding: 30px;
+            margin: 4rem 0;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 2rem;
             border-radius: 12px;
-            margin-bottom: 40px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
         }
 
         .video-container {
@@ -140,93 +132,78 @@
         }
 
         .resources-section {
-            background: var(--card-bg);
-            padding: 30px;
-            border-radius: 12px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
-        }
-
-        .resources-section h2 {
-            color: white;
-            font-size: 2rem;
-            margin-bottom: 30px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            margin: 4rem 0;
         }
 
         .resources-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+            gap: 2rem;
         }
 
         .resource-card {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 20px;
-            border-radius: 8px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 12px;
+            transition: transform 0.3s ease;
         }
 
         .resource-card:hover {
             transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.1);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
 
         .resource-card a {
-            color: var(--text-color);
+            color: white;
             text-decoration: none;
-            font-size: 1.1rem;
-            display: block;
+            font-size: 1.2rem;
         }
 
-        .back-button {
+        .button-container {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .button {
             display: inline-block;
-            padding: 12px 24px;
-            background: linear-gradient(45deg, var(--bright-blue), #00bcd4);
+            padding: 0.8rem 1.5rem;
+            background: var(--bright-blue);
             color: white;
             text-decoration: none;
             border-radius: 25px;
             font-weight: 500;
-            transition: all 0.3s ease;
-            margin-top: 20px;
-            border: none;
-            cursor: pointer;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            transition: transform 0.3s ease;
         }
 
-        .back-button:hover {
+        .button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(33, 150, 243, 0.3);
-        }
-
-        @media (max-width: 768px) {
-            .game-days-header h1 {
-                font-size: 2.5rem;
-            }
-            .resources-grid {
-                grid-template-columns: 1fr;
-            }
-            .shape-left, .shape-right {
-                width: 200px;
-            }
         }
     </style>
 </head>
 <body>
-    <div class="geometric-shapes">
-        <div class="shape shape-left"></div>
-        <div class="shape shape-right"></div>
-    </div>
+    <nav class="nav">
+        <a href="#" class="nav-logo">Managing at Shopify</a>
+        <div class="nav-links">
+            <a href="#" class="nav-link active">Prepare</a>
+            <a href="#" class="nav-link">Game Days</a>
+            <a href="#" class="nav-link">Level Up</a>
+        </div>
+    </nav>
 
-    <div class="game-days-container">
-        <div class="game-days-header">
-            <h1>Game Days</h1>
-            <p>Welcome to your next step in leadership development</p>
+    <div class="container">
+        <div class="header">
+            <h1>GAME DAYS</h1>
+            <p>Level up your management game with three days of intensive learning, collaboration, and growth.</p>
+        </div>
+
+        <div class="quote-section">
+            <div class="quote">"Game Days is where you get your reps in. It's where you practice the hard conversations and challenging aspects of management."</div>
+            <div class="quote-author">- Tobi</div>
+        </div>
+
+        <div class="tldr">
+            TL;DR: Game Days are IRL training sessions, and your chance to practice the hardest parts of managing with other managers at your level.
         </div>
 
         <div class="video-section">
@@ -239,7 +216,6 @@
         </div>
 
         <div class="resources-section">
-            <h2>Resources for Managers</h2>
             <div class="resources-grid">
                 <div class="resource-card">
                     <a href="https://docs.google.com/document/d/1u5lIrD-ZAmJGUVO0tKao0r_nv0UQZQt-VCssgH3Ueos/edit?tab=t.0" target="_blank">Blueprint Generator</a>
@@ -262,9 +238,9 @@
             </div>
         </div>
 
-        <div style="text-align: center;">
-            <a href="index.html" class="back-button">Back to Email</a>
-            <a href="vibe-coding.html" class="back-button" style="margin-left: 20px;">See Vibe Coding Examples</a>
+        <div class="button-container">
+            <a href="index.html" class="button">Back to Email</a>
+            <a href="vibe-coding.html" class="button">See Vibe Coding Examples</a>
         </div>
     </div>
 </body>
