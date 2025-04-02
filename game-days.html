@@ -215,56 +215,95 @@
                 width: 200px;
             }
         }
+
+        .side-nav {
+            position: fixed;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 250px;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .side-nav a {
+            color: white;
+            text-decoration: none;
+            padding: 1rem;
+            border-radius: 8px;
+            transition: background 0.3s ease;
+            font-size: 1.1rem;
+        }
+
+        .side-nav a:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .main-content {
+            margin-left: 250px;
+            padding: 2rem;
+        }
     </style>
 </head>
 <body>
-    <div class="geometric-shapes">
-        <div class="shape shape-left"></div>
-        <div class="shape shape-right"></div>
-    </div>
-
-    <div class="game-days-container">
-        <div class="game-days-header">
-            <h1>Game Days</h1>
-            <p>Welcome to your next step in leadership development</p>
+    <nav class="side-nav">
+        <a href="index.html">Tobi's Email</a>
+        <a href="game-days.html">Game Day Resources</a>
+        <a href="vibe-coding.html">Vibe Coding Examples</a>
+    </nav>
+    
+    <div class="main-content">
+        <div class="geometric-shapes">
+            <div class="shape shape-left"></div>
+            <div class="shape shape-right"></div>
         </div>
 
-        <div class="video-section">
-            <div class="video-container">
-                <iframe 
-                    src="https://drive.google.com/file/d/1d2DG78kN_bhDiiJvzv7xwVx7JRYxHvbk/preview" 
-                    allow="autoplay">
-                </iframe>
+        <div class="game-days-container">
+            <div class="game-days-header">
+                <h1>Game Days</h1>
+                <p>Welcome to your next step in leadership development</p>
             </div>
-        </div>
 
-        <div class="resources-section">
-            <h2>Resources for Managers</h2>
-            <div class="resources-grid">
-                <div class="resource-card">
-                    <a href="https://docs.google.com/document/d/1u5lIrD-ZAmJGUVO0tKao0r_nv0UQZQt-VCssgH3Ueos/edit?tab=t.0" target="_blank">Blueprint Generator</a>
-                </div>
-                <div class="resource-card">
-                    <a href="https://vault.shopify.io/page/Book-Bar~758.md" target="_blank">Book Bar Resources</a>
-                </div>
-                <div class="resource-card">
-                    <a href="https://vault.shopify.io/page/Manager-Labs~Q1NN.md" target="_blank">Manager Labs</a>
-                </div>
-                <div class="resource-card">
-                    <a href="https://newsletter.weskao.com/p/15-principles-for-managing-up" target="_blank">15 principles for managing up</a>
-                </div>
-                <div class="resource-card">
-                    <a href="https://paulgraham.com/foundermode.html" target="_blank">Founder mode (why management is different here)</a>
-                </div>
-                <div class="resource-card">
-                    <a href="https://davidmarquet.wordpress.com/2015/02/18/grow-your-people-ladder-of-leadership-series-part-3/" target="_blank">Ladder of leadership - David Marquet</a>
+            <div class="video-section">
+                <div class="video-container">
+                    <iframe 
+                        src="https://drive.google.com/file/d/1d2DG78kN_bhDiiJvzv7xwVx7JRYxHvbk/preview" 
+                        allow="autoplay">
+                    </iframe>
                 </div>
             </div>
-        </div>
 
-        <div style="text-align: center;">
-            <a href="index.html" class="back-button">Back to Email</a>
-            <a href="vibe-coding.html" class="back-button" style="margin-left: 20px;">See Vibe Coding Examples</a>
+            <div class="resources-section">
+                <h2>Resources for Managers</h2>
+                <div class="resources-grid">
+                    <div class="resource-card">
+                        <a href="https://docs.google.com/document/d/1u5lIrD-ZAmJGUVO0tKao0r_nv0UQZQt-VCssgH3Ueos/edit?tab=t.0" target="_blank">Blueprint Generator</a>
+                    </div>
+                    <div class="resource-card">
+                        <a href="https://vault.shopify.io/page/Book-Bar~758.md" target="_blank">Book Bar Resources</a>
+                    </div>
+                    <div class="resource-card">
+                        <a href="https://vault.shopify.io/page/Manager-Labs~Q1NN.md" target="_blank">Manager Labs</a>
+                    </div>
+                    <div class="resource-card">
+                        <a href="https://newsletter.weskao.com/p/15-principles-for-managing-up" target="_blank">15 principles for managing up</a>
+                    </div>
+                    <div class="resource-card">
+                        <a href="https://paulgraham.com/foundermode.html" target="_blank">Founder mode (why management is different here)</a>
+                    </div>
+                    <div class="resource-card">
+                        <a href="https://davidmarquet.wordpress.com/2015/02/18/grow-your-people-ladder-of-leadership-series-part-3/" target="_blank">Ladder of leadership - David Marquet</a>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center;">
+                <a href="index.html" class="back-button">Back to Email</a>
+                <a href="vibe-coding.html" class="back-button" style="margin-left: 20px;">See Vibe Coding Examples</a>
+            </div>
         </div>
     </div>
 </body>
